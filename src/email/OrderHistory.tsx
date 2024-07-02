@@ -18,13 +18,16 @@ type OrderHistoryEmailProps = {
 
 
 OrderHistoryEmail.PreviewProps = {
-    product: { name: "Product Name", description: "", imagePath: "" },
-    order: {
-        id: crypto.randomUUID(),
-        createdAt: new Date(),
-        pricePaidInCents: 10000,
-    },
-    downloadVerificationId: crypto.randomUUID()
+    orders: [
+        {
+            id: crypto.randomUUID(),
+            createdAt: new Date(),
+            pricePaidInCents: 10000,
+            downloadVerificationId: crypto.randomUUID(),
+            product: { name: "Product Name", description: "", imagePath: "" },
+        }
+    ]
+
 } satisfies OrderHistoryEmailProps
 
 export default function OrderHistoryEmail({ orders }:
